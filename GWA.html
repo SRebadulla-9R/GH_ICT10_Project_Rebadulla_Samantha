@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lockewood University</title>
+
+    <!-- Website Icon -->
+    <link rel="icon" type="image/png" href="giraffe.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Schoolbell&display=swap" rel="stylesheet">
+
+     <style>
+        body {
+            background-color: #FEFDCA;
+            font-family: 'Schoolbell', cursive; 
+        }
+
+        .navbar {
+            background-color: #A5DEE5;
+        }
+
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .navbar-brand img {
+            height: 35px;
+            margin-right: 8px;
+        }
+
+        .role-icon {
+            color: white;
+            font-size: 26px;
+            margin-left: 15px;
+        }
+
+        h1 {
+            color: #F875AA;
+            font-family: 'Henny Penny', cursive;
+            padding: 30px;
+            text-align: center;
+        }
+
+        label {
+            color: #F875AA;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #A5DEE5;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            color: white;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #F875AA;
+            font-family: 'Schoolbell', cursive; 
+            color: #FEFDCA;
+            border: none;
+            margin: 15px;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #F550D1;
+        }
+
+        input {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg shadow-sm">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="giraffe.png" alt="Logo"> Lockewood University
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="gwa.html">GWA Calculator</a></li>
+                <li class="nav-item"><a class="nav-link" href="clubs.html">School Clubs</a></li>
+            </ul>
+            <i class="bi bi-person-circle role-icon"></i>
+        </div>
+    </div>
+</nav>
+
+<!-- CALCULATOR FORM -->
+<div class="container mt-4">
+
+    <h1>Student Information</h1>
+
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" class="form-control mb-2">
+
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" class="form-control mb-4">
+
+    <!-- Core Subjects -->
+    <h1>Core Subjects</h1>
+    <div class="row">
+        <div class="col-md-3 mb-2">
+            <label>English:</label>
+            <input type="number" id="english" class="form-control" step="0.01">
+        </div>
+        <div class="col-md-3 mb-2">
+            <label>Filipino:</label>
+            <input type="number" id="filipino" class="form-control" step="0.01">
+        </div>
+        <div class="col-md-3 mb-2">
+            <label>Math:</label>
+            <input type="number" id="math" class="form-control" step="0.01">
+        </div>
+        <div class="col-md-3 mb-2">
+            <label>Social Studies:</label>
+            <input type="number" id="social_studies" class="form-control" step="0.01">
+        </div>
+    </div>
+
+    <!-- Special Subjects -->
+    <h1>Special Subjects</h1>
+    <div class="row">
+        <div class="col-md-3 mb-2">
+            <label>Physical Education:</label>
+            <input type="number" id="pe" class="form-control" step="0.01">
+        </div>
+        <div class="col-md-3 mb-2">
+            <label>Values Education:</label>
+            <input type="number" id="values" class="form-control" step="0.01">
+        </div>
+        <div class="col-md-3 mb-2">
+            <label>CAT (Citizen Advancement):</label>
+            <input type="number" id="cat" class="form-control" step="0.01">
+        </div>
+        <div class="col-md-3 mb-2">
+            <label>TLE:</label>
+            <input type="number" id="tle" class="form-control" step="0.01">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 mb-2">
+            <label>ICT:</label>
+            <input type="number" id="ict" class="form-control" step="0.01">
+        </div>
+        <div class="col-md-3 mb-2">
+            <label>Music & Arts:</label>
+            <input type="number" id="music_arts" class="form-control" step="0.01">
+        </div>
+    </div>
+
+    <!-- Calculate GWA Button -->
+    <button onclick="calculateGWA()">Calculate GWA</button>
+
+</div>
+
+<!-- OUTPUT BOX -->
+<center>
+    <p id="result" style="
+        background-color: white;
+        padding: 20px;
+        margin: 30px;
+        border-radius: 10px;
+        font-size: 28px;
+        width: 70%;
+        color: #F875AA;
+        font-family: 'Schoolbell', cursive;
+    ">
+        Your GWA will appear here.
+    </p>
+</center>
+
+<!-- FOOTER -->
+<footer>
+    <p>© Samantha Erin Rebadulla | 10R | ICT Project</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Python Script -->
+<script>
+    //  Subject Information
+    const subjectData = {
+        coreSubjects: ["english", "filipino", "math", "social_studies"],
+        specialSubjects: ["pe", "values", "cat", "tle", "ict", "music_arts"],
+        allSubjects: ["english", "filipino", "math", "social_studies", "pe", "values", "cat", "tle", "ict", "music_arts"]
+    };
+
+    // Weight Configuration
+    const weightConfig = {
+        coreWeight: 0.6,
+        specialWeight: 0.4,
+        totalSubjects: 10
+    };
+
+    // Student Result Template
+    const resultTemplate = {
+        firstName: "",
+        lastName: "",
+        grades: {
+            english: 0,
+            filipino: 0,
+            math: 0,
+            social_studies: 0,
+            pe: 0,
+            values: 0,
+            cat: 0,
+            tle: 0,
+            ict: 0,
+            music_arts: 0
+        }
+    };
+
+    function calculateGWA() {
+        // Collect all grades
+        const studentGrades = {
+            english: parseFloat(document.getElementById("english").value),
+            filipino: parseFloat(document.getElementById("filipino").value),
+            math: parseFloat(document.getElementById("math").value),
+            social_studies: parseFloat(document.getElementById("social_studies").value),
+            pe: parseFloat(document.getElementById("pe").value),
+            values: parseFloat(document.getElementById("values").value),
+            cat: parseFloat(document.getElementById("cat").value),
+            tle: parseFloat(document.getElementById("tle").value),
+            ict: parseFloat(document.getElementById("ict").value),
+            music_arts: parseFloat(document.getElementById("music_arts").value)
+        };
+
+        // All grades 
+        const allGradesList = [
+            studentGrades.english,
+            studentGrades.filipino,
+            studentGrades.math,
+            studentGrades.social_studies,
+            studentGrades.pe,
+            studentGrades.values,
+            studentGrades.cat,
+            studentGrades.tle,
+            studentGrades.ict,
+            studentGrades.music_arts
+        ];
+
+        // Calculate GWA
+        const gwa = allGradesList.reduce((a, b) => a + b) / allGradesList.length;
+
+        // Create output datatype
+        const outputData = {
+            fname: document.getElementById("fname").value,
+            lname: document.getElementById("lname").value,
+            gwaScore: gwa.toFixed(2)
+        };
+
+        // Display using datatype
+        document.getElementById("result").innerHTML = `<strong>${outputData.fname} ${outputData.lname}'s GWA is: ${outputData.gwaScore}</strong>`;
+    }
+</script>
+
+<!-- NOTES ON DATATYPES 
+Datatype 1:
+PURPOSE: Organizes all subject names into categories
+- coreSubjects: ARRAY of 4 main subjects
+- specialSubjects: ARRAY of 6 special subjects
+- allSubjects: ARRAY combining all 10 subjects together
+USAGE: Reference which subjects belong in which category
+
+
+Datatype 2:
+PURPOSE: Stores weight/importance values for calculations
+- 0.6 means core subjects have 60% importance
+- 0.4 means special subjects have 40% importance
+- 10 is the total count of all subjects
+USAGE: Used to determine how much each subject category affects the GWA
+
+
+Datatype 3:
+PURPOSE: Blueprint/template for storing student data
+- firstName/lastName: Stores student's name
+- grades: NESTED OBJECT with all subject grades set to 0
+USAGE: Reference structure to create new student records
+
+
+Datatype 4:
+PURPOSE: Collects all grade values from HTML form inputs
+- Each property = subject name
+- Each value = grade number (converted to float/decimal)
+- parseFloat() converts text input to number datatype
+USAGE: Contains actual student's grades for calculation
+
+
+Datatype 5:
+PURPOSE: Converts the grades object into a simple ARRAY
+- Extracts all grade values in order
+- Makes it easy to use array methods like .reduce()
+USAGE: Used to calculate the average (sum ÷ count)
+
+
+Datatype 6:
+const gwa = allGradesList.reduce((a, b) => a + b) / allGradesList.length;
+PURPOSE: Calculates the General Weighted Average
+- .reduce() sums all grades: (a + b)
+- / allGradesList.length divides by count (10 subjects)
+- Result is a single NUMBER (the GWA)
+USAGE: The final GWA score (e.g., 85.50)
+
+
+Datatype 7:
+PURPOSE: Packages data for display
+- fname: Student's first name (STRING)
+- lname: Student's last name (STRING)
+- gwaScore: GWA rounded to 2 decimal places (STRING)
+- .toFixed(2) converts number to string with 2 decimals
+USAGE: Used to create the final output message -->
+
+</body>
+</html>

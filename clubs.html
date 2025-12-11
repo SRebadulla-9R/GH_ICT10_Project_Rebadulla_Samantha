@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lockewood University</title>
+
+    <!-- Website Icon -->
+    <link rel="icon" type="image/png" href="giraffe.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Schoolbell&display=swap" rel="stylesheet">
+
+   <style>
+        body {
+            background-color: #FEFDCA;
+            font-family: 'Schoolbell', cursive; 
+        }
+
+        .navbar {
+            background-color: #A5DEE5;
+        }
+
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .navbar-brand img {
+            height: 35px;
+            margin-right: 8px;
+        }
+
+        .role-icon {
+            color: white;
+            font-size: 26px;
+            margin-left: 15px;
+        }
+
+        h1 {
+            color: #F875AA;
+            font-family: 'Henny Penny', cursive;
+            padding: 30px;
+            text-align: center;
+        }
+
+        p {
+            color: #F875AA;
+        }
+
+        footer {
+            background-color: #A5DEE5;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            color: white;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #F875AA;
+            font-family: 'Schoolbell', cursive; 
+            color: #FEFDCA;
+            border: none;
+            margin: 15px;
+            padding: 20px;
+            width: 100%;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #F550D1;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="giraffe.png" alt="Logo"> Lockewood University
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gwa.html">GWA Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clubs.html">School Clubs</a>
+                    </li>
+                </ul>
+                <i class="bi bi-person-circle role-icon"></i>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Clubs -->
+<h1 class="text-center mb-4" style="color:#F875AA;">Join Our School Clubs!</h1>
+
+    <!-- Buttons Container (Light Pink) -->
+    <div class="container mb-4" style="background-color:#FFCFDF; padding:20px; border-radius:10px;">
+        <div class="row g-3 text-center">
+
+        <!-- Column 1 -->
+        <div class="col-md-3">
+            <button onclick="showClub('science')">Science Club!</button>
+            <br>
+            <button onclick="showClub('math')">Math Club</button>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="col-md-3">
+            <button onclick="showClub('commarts')">Communication Arts</button>
+            <br>
+            <button onclick="showClub('socsci')">Social Sciences Club</button>
+        </div>
+
+        <!-- Column 3 -->
+       <div class="col-md-3">
+            <button onclick="showClub('basketball')">Basketball Varsity</button>
+            <br>
+            <button onclick="showClub('volleyball')">Volleyball Varsity</button>
+        </div>
+
+        <!-- Column 4 -->
+          <div class="col-md-3">
+            <button onclick="showClub('dance')">Dance Club </button>
+            <br>
+            <button onclick="showClub('glee')">Glee Club</button>
+        </div>
+    </div>
+</div>
+
+<h1>Find more Information about the clubs below!</h1>
+
+    <!-- Output Div -->
+    <div class="container" style="background-color:#FFCFDF; padding:20px; border-radius:10px; margin-bottom:20px;">
+        <div id="output" style="color:#F875AA; font-size:18px;">
+            <p>Click a button to see club information!</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© Samantha Erin Rebadulla | 10R | ICT Project</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+       <!-- JavaScript with club data -->
+    <script>
+        const clubs = {
+            science: {
+                Name: "Science Club",
+                Description: "Spark curiosity, develop critical thinking, and inspire interest in STEM fields through experiments, projects, field trips, and competitions.",
+                "Meeting Time": "Tuesday 2:30-4:30 PM",
+                Location: "Science Physics Lab",
+                "Club Moderator": "Mr. Joji",
+                "Number of Members": 15
+            },
+            math: {
+                Name: "Math Club",
+                Description: "Explore challenging problems, discuss intriguing mathematical ideas, and participate in competitions.",
+                "Meeting Time": "Monday 2:00-4:00 PM",
+                Location: "Room 567",
+                "Club Moderator": "Ms. Clairo",
+                "Number of Members": 20
+            },
+            commarts: {
+                Name: "Communication Arts",
+                Description: "Apply in-classroom learning in practical, out-of-classroom experiences.",
+                "Meeting Time": "Wednesday 2:30-3:30 PM",
+                Location: "Auditorium",
+                "Club Moderator": "Mr. Rupaul",
+                "Number of Members": 25
+            },
+            socsci: {
+                Name: "Social Sciences Club",
+                Description: "Explore topics and issues addressed by social science disciplines.",
+                "Meeting Time": "Thursday 3:00-5:30 PM",
+                Location: "Room 459",
+                "Club Moderator": "Ms. Laufey",
+                "Number of Members": 12
+            },
+            basketball: {
+                Name: "Basketball Varsity",
+                Description: "Train student-athletes in competitive basketball and team play.",
+                "Meeting Time": "Thursday 3:00–5:00 PM",
+                Location: "Basketball Court",
+                "Club Moderator": "Mr. Dwight",
+                "Number of Members": 30
+            },
+            volleyball: {
+                Name: "Volleyball Club",
+                Description: "Develop skills, teamwork, and passion for volleyball.",
+                "Meeting Time": "Tuesday & Friday 3:00–5:00 PM",
+                Location: "School Gymnasium",
+                "Club Moderator": "Coach Ramirez",
+                "Number of Members": 15
+            },
+            dance: {
+                Name: "Dance Club",
+                Description: "Practice and perform various dance styles through weekly sessions.",
+                "Meeting Time": "Wednesday 2:00–3:30 PM",
+                Location: "Ballroom",
+                "Club Moderator": "Ms. Siwa",
+                "Number of Members": 26
+            },
+            glee: {
+                Name: "Glee Club",
+                Description: "Rehearse musical pieces and perform at school events.",
+                "Meeting Time": "Monday 2:30–4:30 PM",
+                Location: "HS Music Room",
+                "Club Moderator": "Mr. Legend",
+                "Number of Members": 30
+            }
+        };
+
+        function showClub(clubKey) {
+            const club = clubs[clubKey];
+            const info = `<strong style='font-size:24px; font-family: "Henny Penny", cursive;'>${club.Name}</strong><br><br><strong>Description:</strong> ${club.Description}<br><br><strong>Meeting Time:</strong> ${club["Meeting Time"]}<br><br><strong>Location:</strong> ${club.Location}<br><br><strong>Club Moderator:</strong> ${club["Club Moderator"]}<br><br><strong>Number of Members:</strong> ${club["Number of Members"]}`;
+            document.getElementById("output").innerHTML = info;
+        }
+    </script>
+
+    <!-- NOTES ON DATATYPES
+    Datatype 1: 
+     PURPOSE: Single top-level OBJECT that groups all club records by key.
+     USAGE: Lookup a club record by key (clubs[clubKey]).
+
+    Datatype 2: club record (Object)
+    - Name: STRING
+    - Description: STRING
+    - "Meeting Time": STRING
+    - Location: STRING
+    - "Club Moderator": STRING
+    - "Number of Members": NUMBER
+    PURPOSE: Stores all fields for one club.
+    USAGE: Provide values to render into the UI (strings for text, number for counts).
+
+    Datatype 3:
+    PURPOSE: IDENTIFIER to select a club record from the clubs object.
+    SAGE: Used as clubs[clubKey] to access the club object.
+
+    Datatype 4:
+    PURPOSE: HTML STRING assembled from club record fields.
+    USAGE: Assigned to document.getElementById("output").innerHTML to render content.
+
+    Datatype 5
+    PURPOSE: Target for displaying the HTML STRING.
+    USAGE: Receives the rendered info string for user view.
+
+    Datatype 6:
+    Example: club["Number of Members"] === 15
+    PURPOSE: Numeric metadata for each club.
+    USAGE: Displayed in UI or used for numeric operations if needed. -->
+
+</body>
+</html>
